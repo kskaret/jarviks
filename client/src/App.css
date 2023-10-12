@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box; /* Include padding and border in an element's total width and height */
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  align-items: start; /* Align content to the start (left in this case) */
+  position: relative; /* Relative positioning to allow absolute positioning of children */
+  padding: 20px; /* Some padding to space out content */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between; 
+  overflow: hidden; 
+}
+
+.controls {
+  position: fixed; /* Fix the position of the controls */
+  bottom: 0; /* Align it to the bottom */
+  width: 100%; /* Occupy full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border-top: 1px solid #ccc;
+}
+.controls input {
+  flex-grow: 1;
+  height: 40px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.record-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+}
+
+.record-button:hover {
+  background-color: #4CAF50;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: calc(100vh - 60px); /* Adjust this value based on the height of your controls component */
+  width: 100%;
+  margin: auto;
+  background-color:rgba(15, 14, 14, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  flex-grow: 1; 
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.message {
+  max-width: 60%;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 18px;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  color: white;
+  text-align: left;
+}
+
+.message::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #0b93f6;
+}
+
+.message.user::after {
+  right: -15px;
+  top: 10px;
+  border: 10px solid;
+  border-color: transparent transparent transparent #0b93f6;
+}
+
+.message.system {
+  align-self: flex-start;
+  background-color: #e5e5ea;
+  color: #888888;  /* Made text color lighter to make it harder to see */
+  font-size: 8px; /* Reduced font size */
+}
+
+.message.system::after {
+  left: -15px;
+  top: 10px;
+  border: 10px solid;
+  border-color: transparent #e5e5ea transparent transparent;
+}
+.message.system::after {
+  left: -15px;
+  top: 10px;
+  border: 10px solid;
+  border-color: transparent #e5e5ea transparent transparent;
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background-color: #34C759;  /* This is bright green; adjust as necessary */
+}
+
+.message.loading .content {
+  align-self: flex-start;
+  background-color: #34C759;  /* This is bright green; adjust as necessary */
+  animation: ellipsis 1.25s infinite;
+}
+
+.role {
+  display: none;
+}
+
+.record-button.recording {
+  animation: pulse 2s infinite;
+}
+
+.content {
+  white-space: pre-line; /* Preserve white spaces and line breaks */
+  font-family: 'Roboto Mono', monospace; /* New robotic font */
+}
+
+.token-counter {
+  position: absolute;
+  top: 10px;  /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  z-index: 100; /* To ensure it is always on top */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* Styling for bullet points */
+.content[data-bullet="true"]::before {
+  content: "• ";
+  color: white;
+  margin-right: 5px;
+}
+
+@keyframes pulse {
+0% {
+  box-shadow: 0 0 0 0 rgba(0,140,186,0.4);
+}
+70% {
+  box-shadow: 0 0 0 20px rgba(186, 0, 0, 0);
+}
+100% {
+  box-shadow: 0 0 0 0 rgba(0,140,186,0);
+}
+}
+
+.message.loading .content span {
+  animation: loadingDots 1.5s infinite;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.message.loading .content span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.message.loading .content span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.message.loading .content span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes loadingDots {
+  0%, 20%, 100% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+}
+
