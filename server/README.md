@@ -48,9 +48,3 @@ const functionRegistry = new FunctionRegistry()
 functionRegistry.registerFunctions(yrFunctions)
 functionRegistry.registerFunctions(exampleFunctions)
 ```
-
-## Technology Stack
-
-- **Express**: 
-- **Socket.io**:
-- **Nodemon**: Utility to automatically restart the server as file changes are detected.
