@@ -7,7 +7,7 @@ It provides API endpoints for the frontend and handles communication with the Op
 To add new functionality to the chatbot you need to perform the following steps:
 
 1. **Define a New Function**: Create a new function based on the desired functionality.
-2. **Describe the Function**: Add a description of that function in an array and export it.
+2. **Describe the Function**: Add a description of that function in an array and export it. (this description must adhere to a format defined by OpenAI, the type GPTFunction tries to emulate this)
 3. **Register the Function**: Incorporate the function description into the `FunctionRegistry`.
 4. **Backend Integration**: Now, when GPT think it is wise, it will suggest using your function (and provide the input) to the backend. The backend, in turn, will execute it automatically.
 
