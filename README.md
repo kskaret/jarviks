@@ -60,3 +60,6 @@ To get a local copy up and running, follow these simple steps:
 - `/client`: This directory contains the React frontend application.
 - `/server`: This directory contains the Node.js backend.
 
+## Want to give the Bot new superpowers?
+Check out ./server/README.md to see how one can add new functions to the GPT context
+
