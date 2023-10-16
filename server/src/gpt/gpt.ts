@@ -50,7 +50,7 @@ const chatCompletion = async (
   const response = await axios.post(
     'https://api.openai.com/v1/chat/completions',
     {
-      model: "gpt-3.5-turbo-0613",
+      model: "gpt-4-0613",
       messages: messages,
       functions: functionRegistry.getOPENAIReadyFunctions()
     },
