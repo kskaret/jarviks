@@ -136,3 +136,16 @@ const callFunction = async (gptFunction: GPTFunction, args: string): Promise<Mes
   }
   return messages
 }
+
+
+
+
+// Til API
+const messages=[
+      {"role": "system", "content": "You are a helpful assistant."},
+      {"role": "user", "content": "Who won the world series in 2020?"}
+  ]
+// Fra API
+const answer = [
+  {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+]
