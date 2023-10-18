@@ -2,21 +2,23 @@ import express from "express"
 import path from 'path'
 import * as fs from 'fs';
 import http from 'http'
-import { Server } from 'socket.io'
-import { getDefaultMessages, handleMessages, transcribeAudio } from "./gpt/gpt"
-import { Message } from "./gpt/types"
-import { UploadAudioData } from "./types"
+import {Server} from 'socket.io'
+import {getDefaultMessages, handleMessages, transcribeAudio} from "./gpt/gpt"
+import {Message} from "./gpt/types"
+import {UploadAudioData} from "./types"
 import dotenv from 'dotenv'
-import { FunctionRegistry } from "./gpt/functionRegistry"
-import { yrFunctions } from "./yr/yr"
-import { exampleFunctions } from "./example/addTwoNumbers"
+import {FunctionRegistry} from "./gpt/functionRegistry"
+import {yrFunctions} from "./yr/yr"
+import {exampleFunctions} from "./example/addTwoNumbers"
+import {electricityPrices} from "./electricity/electricityPrice";
 //import { hueFunctions } from "./hue/hue"
 //import { kassalappenFunctions } from "./kassalappen/kassalappen"
 dotenv.config()
 
 const functionRegistry = new FunctionRegistry()
-functionRegistry.registerFunctions(yrFunctions)
-functionRegistry.registerFunctions(exampleFunctions)
+//functionRegistry.registerFunctions(yrFunctions)
+//functionRegistry.registerFunctions(exampleFunctions)
+functionRegistry.registerFunctions(electricityPrices)
 
 //functionRegistry.registerFunctions(hueFunctions)
 //functionRegistry.registerFunctions(kassalappenFunctions)

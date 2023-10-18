@@ -1,6 +1,7 @@
 import { GPTFunction } from "../gpt/types"
 
 const addTwoNumbers = (input: {number1: number, number2: number}) => {
+  console.log("adding two numbers")
     const {number1, number2} = input
     return number1 + number2
 }
