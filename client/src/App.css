@@ -62,7 +62,7 @@ body, html {
 }
 
 .record-button:hover {
-  background-color: #4CAF50;
+  background-color: rgba(21, 68, 8, 0.7);
 }
 
 .chat {
@@ -85,8 +85,8 @@ body, html {
   padding: 10px 20px;
   margin: 10px;
   border-radius: 18px;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 22px;
+  line-height: 32px;
   position: relative;
   color: white;
   text-align: left;
@@ -133,12 +133,12 @@ body, html {
 
 .message.assistant {
   align-self: flex-start;
-  background-color: #34C759;  /* This is bright green; adjust as necessary */
+  background-color: rgba(21, 68, 8, 0.7);  /* This is bright green; adjust as necessary */
 }
 
 .message.loading .content {
   align-self: flex-start;
-  background-color: #34C759;  /* This is bright green; adjust as necessary */
+  background-color: rgba(21, 68, 8, 0.7);  /* This is bright green; adjust as necessary */
   animation: ellipsis 1.25s infinite;
 }
 

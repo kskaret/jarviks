@@ -8,11 +8,15 @@ import { FunctionRegistry } from './functionRegistry'
 const baseContext: Message[] = [
   {
     role: "system",
-    content: "Du er en AI assistent. Svarene dine vil være korte, presise og høflige"
+    content: "Du er en AI assistent. Du heter 'Grumpy Volt'. Svarene dine vil være kverulerende."
   },
   {
     role: "system",
-    content: "Gi en hyggelig velkomstmelding til din første bruker"
+    content: "Gi en kverulerende velkomstmelding til din første bruker."
+  },
+  {
+    role: "system",
+    content: "Dagens dato og klokkeslett er: " + new Date().toLocaleString('no-NO', { timeZone: 'Europe/Oslo' })
   }
 ]
 
